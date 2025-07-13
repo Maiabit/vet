@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria J - Vet</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Estilos CSS unificados -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--BANNER CSS-->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 150%;
+        }
+
+        main {
+            margin: 20px auto;
+            max-width: 1000px;
+            background: #fff;
+            min-height: 80vh;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .aviso-cookies {
+            display: none;
+            background: white;
+            padding: 20px;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            line-height: 150%;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            padding-top: 60px;
+            box-shadow: 0px 2px 20px 10px rgba(222, 222, 222, .25);
+            text-align: center;
+
+        }
+
+        .aviso-cookies.activo {
+            display: block;
+        }
+
+        .aviso-cookies .galleta {
+            max-width: 100px;
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 50px);
+        }
+
+        .aviso-cookies .titulo {
+            margin-bottom: 15px;
+        }
+
+        .aviso-cookies .parrafo {
+            margin-bottom: 15px;
+        }
+
+        .aviso-cookies .boton {
+            width: 100%;
+            background: #595959;
+            border: none;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transform: .3s ease all;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .boton:hover {
+            background: #000;
+        }
+
+        .aviso-cookies .enlace {
+            color: #4DBFFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .enlace:hover {
+            text-decoration: underline;
+        }
+
+        .fondo-aviso-cookies {
+            display: none;
+            background: rgba(0, 0, 0, .20);
+            position: fixed;
+            z-index: 99;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+        }
+
+        .fondo-aviso-cookies.activo {
+            display: block;
+        }
+
+        #fondoAnuncio {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+        }
+
+        /* Contenedor del anuncio */
+        #anuncio {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 10px;
+            max-width: 90vw;
+            max-height: 90vh;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: none;
+        }
+
+        #anuncio img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #cerrarAnuncio {
+            margin-top: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+    <!--FIN BANNER CSS-->
+</head>
+
+<body>
+    <!-- Header con navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <!--<img src="imagenes/logo.png" alt="Veterinaria J - Vet Logo" onerror="this.src='https://via.placeholder.com/50x50?text=AW'; this.onerror=''">-->
+                    <span class="logo-text">Veterinaria J - Vet</span>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="vision_mision.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="catalogo.html" class="nav-link">Galería</a></li>
+                    <li><a href="reserva.html" class="nav-link">Reservas</a></li>
+                    <li><a href="registro_1.html" class="nav-link">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagen/vetmascot.jpg'); background-position: center; background-size: cover; min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Cuidamos a quien más quieres</h1>
+                <p class="hero-subtitle">En Veterinaria J - Vet, tu mascota recibe la atención que merece</p>
+                <div class="hero-buttons">
+                    <a href="reserva.html" class="btn btn-primary">Reservar Cita</a>
+                    <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros Servicios</h2>
+            <p class="section-subtitle fade-in">Ofrecemos atención integral para el cuidado y bienestar de tu mascota
+            </p>
+
+            <div class="services-grid grid">
+                <div class="service-card fade-in">
+                    <img src="imagenes_agregadas/carrusel1.png" alt="Consulta Veterinaria" class="service-img"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Consulta+Veterinaria'; this.onerror=''">
+                    <div class="service-content">
+                        <h3 class="service-title">Consulta General</h3>
+                        <p class="service-text">Evaluación completa del estado de salud de tu mascota por profesionales
+                            altamente calificados.</p>
+                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="imagenes_agregadas/carrusel3.jpg" alt="Vacunación" class="service-img"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Vacunación'; this.onerror=''">
+                    <div class="service-content">
+                        <h3 class="service-title">Vacunación</h3>
+                        <p class="service-text">Programa completo de vacunación para prevenir enfermedades y mantener a
+                            tu mascota protegida.</p>
+                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <img src="imagenes_agregadas/carrusel5.jpg" alt="Cirugía" class="service-img"
+                        onerror="this.src='https://via.placeholder.com/400x200?text=Cirugía'; this.onerror=''">
+                    <div class="service-content">
+                        <h3 class="service-title">Cirugía</h3>
+                        <p class="service-text">Procedimientos quirúrgicos con equipos modernos y personal especializado
+                            para garantizar la seguridad de tu mascota.</p>
+                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="section">
+        <div class="container">
+            <div class="flex-between" style="flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px; padding: 1rem;">
+                    <h2 class="section-title" style="text-align: left;">Sobre Veterinaria J - Vet</h2>
+                    <p style="margin-bottom: 1.5rem;">En Veterinaria J - Vet nos apasiona el cuidado de quienes nos dan
+                        amor incondicional: nuestras mascotas. Nuestro compromiso es brindar un servicio veterinario
+                        completo y de calidad, con calidez humana, respeto y dedicación.</p>
+                    <p style="margin-bottom: 1.5rem;">Ofrecemos consultas médicas, vacunas, desparasitaciones,
+                        emergencias, cirugías y mucho más, todo realizado por un equipo profesional que entiende lo
+                        importante que es tu compañero peludo para ti.</p>
+                    <p>Además, contamos con una tienda especializada donde encontrarás alimentos balanceados, snacks,
+                        juguetes, productos de higiene, medicinas y accesorios para cada etapa de su vida.</p>
+                    <a href="vision_mision.html" class="btn btn-outline" style="margin-top: 1.5rem;">Conoce más</a>
+                </div>
+
+                <div style="flex: 1; min-width: 300px; padding: 1rem;">
+                    <!-- Carrusel mejorado con controles e indicadores -->
+                    <div class="carousel-container">
+                        <!-- Contenedor de diapositivas -->
+                        <div class="carousel" id="aboutCarousel">
+                            <!-- Diapositiva 1 -->
+                            <div class="carousel-slide">
+                                <img src="imagen/veterinaria2.jpg" alt="Instalaciones Veterinaria J - Vet">
+                                <div class="carousel-caption">
+                                    <h3>Nuestras Instalaciones</h3>
+                                    <p>Contamos con espacios modernos y cómodos para tu mascota</p>
+                                </div>
+                            </div>
+
+                            <!-- Diapositiva 2 -->
+                            <div class="carousel-slide">
+                                <img src="imagen/veterinaria_fondo.jpg" alt="Equipo profesional">
+                                <div class="carousel-caption">
+                                    <h3>Equipo Profesional</h3>
+                                    <p>Veterinarios con amplia experiencia en el cuidado animal</p>
+                                </div>
+                            </div>
+
+                            <!-- Diapositiva 3 -->
+                            <div class="carousel-slide">
+                                <img src="imagen_carrucel/espacio-mascotas-departamento.jpg"
+                                    alt="Servicios especializados">
+                                <div class="carousel-caption">
+                                    <h3>Servicios Especializados</h3>
+                                    <p>Atención personalizada para cada tipo de mascota</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controles del carrusel -->
+                        <div class="carousel-controls">
+                            <button class="carousel-control prev-slide">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next-slide">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Indicadores del carrusel -->
+                        <div class="carousel-indicators">
+                            <span class="carousel-indicator active" data-slide="0"></span>
+                            <span class="carousel-indicator" data-slide="1"></span>
+                            <span class="carousel-indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">Lo que dicen nuestros clientes</h2>
+
+            <div class="testimonial-slider fade-in">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"El equipo de Veterinaria J - Vet salvó la vida de mi perro Max. Su
+                        profesionalismo y dedicación son incomparables. Ahora Max está completamente recuperado y lleno
+                        de energía."</p>
+                    <p class="testimonial-author">María Rodríguez</p>
+                    <p class="testimonial-role">Dueña de Max</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Contáctanos</h2>
+
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Dirección</h4>
+                            <p>Av. Las Vegonias N°1526, Ate - Lima - Perú</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Teléfono</h4>
+                            <p>985 641 552</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>contacto@animalixworld.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                            <p>Sábados: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form fade-in">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+
+                    <button type="submit" class="btn btn-primary">Limpiar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--BANNER BODY-->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LC3ZJ6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="aviso-cookies " id="aviso-cookies">
+        <img class="galleta" src="imagenes-nosotros/cookie.svg" alt="Galleta">
+        <h3 class="titulo"> Cookies</h3>
+        <p class="parrafo">Utlizamos Cookies propias y de terceros para mejorar nuestros servicios.</p>
+        <button class="boton" id="btn-aceptar-cookies"> De acuerdo</button>
+        <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+    </div>
+
+    <div class="fondo-aviso-cookies " id="fondo-aviso-cookies"></div>
+
+    <script src="aviso-cookies.js"> </script>
+
+    <!--FIN BANNER BODY-->
+    <div id="fondoAnuncio"></div>
+
+    <!-- Contenedor del anuncio -->
+    <div id="anuncio">
+        <img src="imagen/aaaaaaaa.png" alt="Anuncio adopcion">
+        <button id="cerrarAnuncio">Cerrar anuncio</button>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="anuncio.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">Veterinaria J - Vet</span>
+                    </div>
+                    <p>Cuidamos con pasión y profesionalismo a quienes te brindan amor incondicional. Tu mascota es
+                        nuestra prioridad.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51999999999" target="_blank" class="social-icon"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="home.html">Inicio</a></li>
+                        <li><a href="vision_mision.html">Nosotros</a></li>
+                        <li><a href="catalogo.html">Galería</a></li>
+                        <li><a href="reserva.html">Reservas</a></li>
+                        <li><a href="registro_1.html">Registro</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul>
+                        <li><a href="#">Consulta General</a></li>
+                        <li><a href="#">Vacunación</a></li>
+                        <li><a href="#">Cirugía</a></li>
+                        <li><a href="#">Peluquería</a></li>
+                        <li><a href="#">Tienda de Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Veterinaria J - Vet. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

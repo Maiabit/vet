@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria J - Vet</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Estilos CSS unificados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--BANNER CSS--> 
+    <style>
+        * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+       }
+
+     body {
+	background: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+     }
+
+     p {
+	margin-bottom: 20px;
+	line-height: 150%;
+     }
+
+     main {
+	margin: 20px auto;
+	max-width: 1000px;
+	background: #fff;
+	min-height: 80vh;
+	padding: 20px;
+	border-radius: 10px;
+     }
+
+        .aviso-cookies{
+            display: none;
+            background: white;
+            padding: 20px;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            line-height: 150%;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            padding-top: 60px;
+            box-shadow: 0px 2px 20px 10px rgba(222,222,222,.25);
+            text-align: center;
+
+        }
+
+        .aviso-cookies.activo{
+            display: block;
+        }
+
+        .aviso-cookies .galleta{
+            max-width: 100px;
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 50px);
+        }
+
+        .aviso-cookies .titulo{
+            margin-bottom: 15px;
+        }
+        .aviso-cookies .parrafo{
+            margin-bottom: 15px;
+        }
+
+        .aviso-cookies .boton{
+            width: 100%;
+            background: #595959;
+            border: none;
+            color: #fff;
+            font-family: 'Roboto',sans-serif;
+            text-align: center;
+            padding: 15px 20px ;
+            font-weight: 700;
+            cursor: pointer;
+            transform: .3s ease all;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .boton:hover{
+            background: #000;
+        }
+
+        .aviso-cookies .enlace{
+            color: #4DBFFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .enlace:hover{
+            text-decoration: underline;
+        }
+
+        .fondo-aviso-cookies{
+            display: none;
+            background: rgba(0,0,0,.20);
+            position: fixed;
+            z-index: 99;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+        }
+
+        .fondo-aviso-cookies.activo{
+            display: block;
+        }
+    </style>
+    <!--FIN BANNER CSS--> 
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                  <!--<img src="imagenes/logo.png" alt="Veterinaria J - Vet Logo" onerror="this.src='https://via.placeholder.com/50x50?text=AW'; this.onerror=''">-->
+                    <span class="logo-text">Veterinaria J - Vet</span>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link">Inicio</a></li>
+                    <li><a href="vision_mision.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="catalogo.html" class="nav-link">Galería</a></li>
+                    <li><a href="reserva.html" class="nav-link active">Reservas</a></li>
+                    <li><a href="registro_1.html" class="nav-link">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero para Reservas -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagen/vetmascot.jpg'); background-position: center; background-size: cover; min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Reserva tu cita</h1>
+                <p class="hero-subtitle">Agenda una cita para tu mascota de manera rápida y sencilla</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Instrucciones con Carrusel -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Cómo reservar de manera correcta</h2>
+            <p class="section-subtitle fade-in">En este espacio podrás seleccionar el servicio deseado, no olvides lo siguiente:</p>
+            
+            <!-- Carrusel de Servicios -->
+            <div class="carousel-container fade-in" style="margin-bottom: 3rem;">
+                <!-- Contenedor del Carrusel -->
+                <div class="carousel" id="servicesCarousel">
+                    <!-- Diapositiva 1: Consulta General -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img8.jpg" alt="Consulta General">
+                        <div class="carousel-caption">
+                            <h3>Consulta General</h3>
+                            <p>Evaluación completa del estado de salud de tu mascota</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 2: Vacunación -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img9.jpg" alt="Vacunación">
+                        <div class="carousel-caption">
+                            <h3>Vacunación</h3>
+                            <p>Programa completo de vacunas para prevenir enfermedades</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 3: Cirugía -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img10.jpg" alt="Cirugía">
+                        <div class="carousel-caption">
+                            <h3>Cirugía</h3>
+                            <p>Procedimientos quirúrgicos con los más altos estándares</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 4: Desparasitación -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img10.jpg" alt="Desparasitación">
+                        <div class="carousel-caption">
+                            <h3>Desparasitación</h3>
+                            <p>Tratamientos contra parásitos internos y externos</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 5: Castración -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img11.jpg" alt="Castración">
+                        <div class="carousel-caption">
+                            <h3>Castración</h3>
+                            <p>Procedimiento seguro realizado por profesionales</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 6: Odontología -->
+                    <div class="carousel-slide">
+                        <img src="imagenes_agregadas/img12.jpg" alt="Odontología">
+                        <div class="carousel-caption">
+                            <h3>Odontología</h3>
+                            <p>Cuidado dental preventivo y tratamientos especializados</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del Carrusel -->
+                <div class="carousel-controls">
+                    <button class="carousel-control prev-slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control next-slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Indicadores del Carrusel -->
+                <div class="carousel-indicators">
+                    <span class="carousel-indicator active" data-slide="0"></span>
+                    <span class="carousel-indicator" data-slide="1"></span>
+                    <span class="carousel-indicator" data-slide="2"></span>
+                    <span class="carousel-indicator" data-slide="3"></span>
+                    <span class="carousel-indicator" data-slide="4"></span>
+                    <span class="carousel-indicator" data-slide="5"></span>
+                </div>
+            </div>
+            
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: var(--spacing-xl);">
+                <!-- Paso 1 -->
+                <div class="fade-in" style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <div style="background-color: var(--color-primary); color: var(--color-white); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 1rem; font-weight: bold;">1</div>
+                        <h3 style="margin: 0; color: var(--color-primary);">Colocar tus datos</h3>
+                    </div>
+                    <p>Completa todos tus datos personales para poder contactarte.</p>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="fade-in" style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <div style="background-color: var(--color-primary); color: var(--color-white); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 1rem; font-weight: bold;">2</div>
+                        <h3 style="margin: 0; color: var(--color-primary);">Nombre de tu mascota</h3>
+                    </div>
+                    <p>Indica el nombre de tu mascota para registrarla correctamente.</p>
+                </div>
+                
+                <!-- Paso 3 -->
+                <div class="fade-in" style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <div style="background-color: var(--color-primary); color: var(--color-white); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 1rem; font-weight: bold;">3</div>
+                        <h3 style="margin: 0; color: var(--color-primary);">Fecha de reserva</h3>
+                    </div>
+                    <p>Selecciona la fecha y hora que prefieras para tu cita.</p>
+                </div>
+                
+                <!-- Paso 4 -->
+                <div class="fade-in" style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <div style="background-color: var(--color-primary); color: var(--color-white); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 1rem; font-weight: bold;">4</div>
+                        <h3 style="margin: 0; color: var(--color-primary);">Servicio solicitado</h3>
+                    </div>
+                    <p>Elige el servicio que necesita tu mascota entre nuestras opciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Formulario -->
+    <section class="section" style="background-color: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title fade-in">Completa el Formulario</h2>
+            
+            <div class="booking-container">
+                <div class="booking-info fade-in">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Nuestros Servicios</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: var(--spacing-md); display: flex; align-items: center;">
+                            <i class="fas fa-stethoscope" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Consulta General</span>
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md); display: flex; align-items: center;">
+                            <i class="fas fa-syringe" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Vacunación</span>
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md); display: flex; align-items: center;">
+                            <i class="fas fa-hospital" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Cirugía</span>
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md); display: flex; align-items: center;">
+                            <i class="fas fa-pills" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Desparasitación</span>
+                        </li>
+                        <li style="margin-bottom: var(--spacing-md); display: flex; align-items: center;">
+                            <i class="fas fa-cut" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Castración</span>
+                        </li>
+                        <li style="display: flex; align-items: center;">
+                            <i class="fas fa-tooth" style="color: var(--color-primary); margin-right: var(--spacing-sm); font-size: 1.2rem;"></i>
+                            <span>Odontología</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 style="color: var(--color-primary); margin: var(--spacing-xl) 0 var(--spacing-md);">Horario de Atención</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: var(--spacing-sm);">Lunes a Viernes: 9:00 AM - 7:00 PM</li>
+                        <li>Sábados: 9:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nombreMascota" class="form-label">Nombre de la Mascota</label>
+                            <input type="text" id="nombreMascota" name="nombreMascota" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hora" class="form-label">Hora</label>
+                            <input type="time" id="hora" name="hora" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servicio" class="form-label">Servicio</label>
+                            <select id="servicio" name="servicio" class="form-control" required>
+                                <option value="consulta">Consulta General</option>
+                                <option value="vacunacion">Vacunación</option>
+                                <option value="cirugia">Cirugía</option>
+                                <option value="desparacitacion">Desparasitación</option>
+                                <option value="castracion">Castración</option>
+                                <option value="odontologia">Odontología</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje" class="form-label">Mensaje adicional (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Reservar Cita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--BANNER BODY-->
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LC3ZJ6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    
+        <div class="aviso-cookies " id="aviso-cookies">
+            <img class="galleta" src="imagenes-nosotros/cookie.svg" alt="Galleta">
+            <h3 class="titulo"> Cookies</h3>
+            <p class="parrafo">Utlizamos Cookies propias y de terceros para mejorar nuestros servicios.</p>
+            <button class="boton" id="btn-aceptar-cookies"> De acuerdo</button>
+            <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+        </div>
+    
+        <div class="fondo-aviso-cookies " id="fondo-aviso-cookies"></div>
+    
+        <script src="aviso-cookies.js"> </script>
+    
+        <!--FIN BANNER BODY-->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">Veterinaria J - Vet World</span>
+                    </div>
+                    <p>Cuidamos con pasión y profesionalismo a quienes te brindan amor incondicional. Tu mascota es nuestra prioridad.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51999999999" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="home.html">Inicio</a></li>
+                        <li><a href="vision_mision.html">Nosotros</a></li>
+                        <li><a href="catalogo.html">Galería</a></li>
+                        <li><a href="reserva.html">Reservas</a></li>
+                        <li><a href="registro_1.html">Registro</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul>
+                        <li><a href="#">Consulta General</a></li>
+                        <li><a href="#">Vacunación</a></li>
+                        <li><a href="#">Cirugía</a></li>
+                        <li><a href="#">Peluquería</a></li>
+                        <li><a href="#">Tienda de Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Veterinaria J - Vet World. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

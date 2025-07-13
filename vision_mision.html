@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Veterinaria J - Vet</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Estilos CSS unificados -->
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- BANNER-->
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T2LC3ZJ6');</script>
+<!-- End Google Tag Manager -->
+    <title>Privacidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+     <!--FIN BANNER--> 
+    
+    <!--BANNER CSS--> 
+    <style>
+        * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+       }
+
+     body {
+	background: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+     }
+
+     p {
+	margin-bottom: 20px;
+	line-height: 150%;
+     }
+
+     main {
+	margin: 20px auto;
+	max-width: 1000px;
+	background: #fff;
+	min-height: 80vh;
+	padding: 20px;
+	border-radius: 10px;
+     }
+
+        .aviso-cookies{
+            display: none;
+            background: white;
+            padding: 20px;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            line-height: 150%;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            padding-top: 60px;
+            box-shadow: 0px 2px 20px 10px rgba(222,222,222,.25);
+            text-align: center;
+
+        }
+
+        .aviso-cookies.activo{
+            display: block;
+        }
+
+        .aviso-cookies .galleta{
+            max-width: 100px;
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 50px);
+        }
+
+        .aviso-cookies .titulo{
+            margin-bottom: 15px;
+        }
+        .aviso-cookies .parrafo{
+            margin-bottom: 15px;
+        }
+
+        .aviso-cookies .boton{
+            width: 100%;
+            background: #595959;
+            border: none;
+            color: #fff;
+            font-family: 'Roboto',sans-serif;
+            text-align: center;
+            padding: 15px 20px ;
+            font-weight: 700;
+            cursor: pointer;
+            transform: .3s ease all;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .boton:hover{
+            background: #000;
+        }
+
+        .aviso-cookies .enlace{
+            color: #4DBFFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .aviso-cookies .enlace:hover{
+            text-decoration: underline;
+        }
+
+        .fondo-aviso-cookies{
+            display: none;
+            background: rgba(0,0,0,.20);
+            position: fixed;
+            z-index: 99;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+        }
+
+        .fondo-aviso-cookies.activo{
+            display: block;
+        }
+    </style>
+    <!--FIN BANNER CSS--> 
+
+</head>
+<body>
+
+
+    <!-- Header con navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <!--<img src="imagenes/logo.png" alt="Veterinaria J - Vet Logo" onerror="this.src='https://via.placeholder.com/50x50?text=AW'; this.onerror=''">-->
+                    <span class="logo-text">Veterinaria J - Vet</span>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link">Inicio</a></li>
+                    <li><a href="vision_mision.html" class="nav-link active">Nosotros</a></li>
+                    <li><a href="catalogo.html" class="nav-link">Galería</a></li>
+                    <li><a href="reserva.html" class="nav-link">Reservas</a></li>
+                    <li><a href="registro_1.html" class="nav-link">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero para Nosotros -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagen/vetmascot.jpg'); background-position: center; background-size: cover; min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Nuestra Historia</h1>
+                <p class="hero-subtitle">Conoce quiénes somos y nuestra pasión por el cuidado animal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Misión y Visión -->
+    <section id="mision-vision" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestra Filosofía</h2>
+            <p class="section-subtitle fade-in">Conoce los valores que guían nuestro trabajo diario</p>
+            
+            <div class="mission-vision-container">
+                <!-- Visión -->
+                <div class="vision-card fade-in">
+                    <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
+                    <img src="imagen/vision_imagen.jpg" alt="Visión Veterinaria J - Vet" class="vision-img" onerror="this.src='https://via.placeholder.com/600x300?text=Visión'; this.onerror=''">
+                    <p>En Veterinaria J - Vet, aspiramos a ser líderes en la atención veterinaria, ofreciendo servicios innovadores y de excelencia que contribuyan al bienestar de las mascotas y a la satisfacción de sus familias. Queremos ser reconocidos por nuestra dedicación, empatía y compromiso con la salud animal, brindando un ambiente cálido y profesional para cada paciente que atendemos.</p>
+                    <p>Nos visualizamos como un centro de referencia en el cuidado animal, donde la educación continua, la investigación y el uso de tecnologías de vanguardia nos permitan ofrecer siempre lo mejor para tus mascotas, garantizando su salud y felicidad en cada etapa de su vida.</p>
+                </div>
+                
+                <!-- Misión -->
+                <div class="mission-card fade-in">
+                    <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+                    <img src="imagen/mision_imagen.jpg" alt="Misión Veterinaria J - Vet" class="mission-img" onerror="this.src='https://via.placeholder.com/600x300?text=Misión'; this.onerror=''">
+                    <p>En Veterinaria J - Vet, nuestra misión es proporcionar atención veterinaria de alta calidad, centrada en el bienestar y la salud de tus mascotas. Nos dedicamos a ofrecer servicios profesionales, humanos y compasivos para mejorar la vida de los animales y brindar tranquilidad a sus dueños. Creemos que cada mascota merece un cuidado individualizado y un ambiente donde se sienta segura y valorada.</p>
+                    <p>Trabajamos con pasión, utilizando tecnología avanzada y un equipo altamente capacitado, para garantizar el mejor diagnóstico y tratamiento para cada uno de nuestros pacientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Valores con Carrusel -->
+    <section class="section" style="background-color: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros Valores</h2>
+            <p class="section-subtitle fade-in">Principios que guían nuestro trabajo diario</p>
+            
+            <!-- Carrusel de Valores -->
+            <div class="carousel-container fade-in" style="margin-bottom: 3rem;">
+                <!-- Contenedor del Carrusel -->
+                <div class="carousel" id="valuesCarousel">
+                    <!-- Diapositiva 1 -->
+                    <div class="carousel-slide">
+                        <img src="imagenes-nosotros/mascota1.jpg" alt="Compasión en la atención veterinaria">
+                        <div class="carousel-caption">
+                            <h3>Compasión</h3>
+                            <p>Tratamos a cada mascota con amor y empatía</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Diapositiva 2 -->
+                    <div class="carousel-slide">
+                        <img src="imagenes-nosotros/mascota2.jpg" alt="Excelencia en servicios veterinarios">
+                        <div class="carousel-caption">
+                            <h3>Excelencia</h3>
+                            <p>El más alto estándar de atención veterinaria</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Diapositiva 3 -->
+                    <div class="carousel-slide">
+                        <img src="imagenes-nosotros/mascota3.jpg" alt="Educación continua">
+                        <div class="carousel-caption">
+                            <h3>Educación</h3>
+                            <p>Promovemos la formación continua y la educación de los dueños</p>
+                        </div>
+                        <!-- Diapositiva 4 -->
+                    
+                        
+                </div>
+                
+                <!-- Controles del Carrusel -->
+                <div class="carousel-controls">
+                    <button class="carousel-control prev-slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-control next-slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                </div>
+                
+                <!-- Indicadores del Carrusel -->
+                <div class="carousel-indicators">
+                    <span class="carousel-indicator active" data-slide="0"></span>
+                    <span class="carousel-indicator" data-slide="1"></span>
+                    <span class="carousel-indicator" data-slide="2"></span>
+                   
+                </div>
+            </div>
+            
+            <div class="values-grid grid">
+                <!-- Valor 1 -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compasión</h3>
+                    <p>Tratamos a cada mascota con amor y empatía, entendiendo su importancia en la vida de sus familias.</p>
+                </div>
+                
+                <!-- Valor 2 -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Excelencia</h3>
+                    <p>Nos esforzamos por ofrecer el más alto estándar de atención veterinaria en cada servicio que brindamos.</p>
+                </div>
+                
+                <!-- Valor 3 -->
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Educación</h3>
+                    <p>Promovemos la formación continua de nuestro equipo y la educación de los dueños para el mejor cuidado de sus mascotas.</p>
+                </div>
+                
+                <!-- Valor 4 -->
+                <div class="fade-in" style="background-color: var(--color-white); padding: 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm);">
+                    <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 1rem;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Comunicación</h3>
+                    <p>Mantenemos una comunicación clara y constante con los dueños de las mascotas, explicando cada diagnóstico y tratamiento de manera comprensible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Video -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Conócenos mejor</h2>
+            <p class="section-subtitle fade-in">Mira nuestro video institucional</p>
+            
+            <div class="fade-in" style="max-width: 900px; margin: 0 auto; box-shadow: var(--box-shadow-lg); border-radius: var(--border-radius-lg); overflow: hidden;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/JG04M3FxLj8?si=FspMrhCvvgoAeWHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Equipo -->
+    <section class="section" style="background-color: var(--color-white);">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestro Equipo</h2>
+            <p class="section-subtitle fade-in">Profesionales comprometidos con la salud y bienestar de tu mascota</p>
+            
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <!-- Miembro 1 -->
+                <div class="fade-in" style="text-align: center;">
+                    <div style="border-radius: 50%; overflow: hidden; width: 200px; height: 200px; margin: 0 auto 1.5rem;">
+                        <img src="imagenes-nosotros/medico1.jpg" alt="Dr. García" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Dr. Carlos García</h3>
+                    <p style="color: var(--color-gray-dark); margin-bottom: 1rem;">Director Médico</p>
+                    <p>Especialista en medicina interna y cirugía con más de 15 años de experiencia.</p>
+                </div>
+                
+                <!-- Miembro 2 -->
+                <div class="fade-in" style="text-align: center;">
+                    <div style="border-radius: 50%; overflow: hidden; width: 200px; height: 200px; margin: 0 auto 1.5rem;">
+                        <img src="imagenes-nosotros/medico2.jpg" alt="Dra. Rodríguez" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Dra. Ana Rodríguez</h3>
+                    <p style="color: var(--color-gray-dark); margin-bottom: 1rem;">Especialista en Dermatología</p>
+                    <p>Experta en enfermedades de la piel y tratamientos avanzados para mascotas.</p>
+                </div>
+                
+                <!-- Miembro 3 -->
+                <div class="fade-in" style="text-align: center;">
+                    <div style="border-radius: 50%; overflow: hidden; width: 200px; height: 200px; margin: 0 auto 1.5rem;">
+                        <img src="imagenes-nosotros/medico3.png" alt="Dr. Mendoza" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Dr. Luis Mendoza</h3>
+                    <p style="color: var(--color-gray-dark); margin-bottom: 1rem;">Cirujano Veterinario</p>
+                    <p>Especializado en cirugías complejas y procedimientos mínimamente invasivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--BANNER BODY-->
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2LC3ZJ6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="aviso-cookies " id="aviso-cookies">
+        <img class="galleta" src="imagenes-nosotros/cookie.svg" alt="Galleta">
+        <h3 class="titulo"> Cookies</h3>
+        <p class="parrafo">Utlizamos Cookies propias y de terceros para mejorar nuestros servicios.</p>
+        <button class="boton" id="btn-aceptar-cookies"> De acuerdo</button>
+        <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+    </div>
+
+    <div class="fondo-aviso-cookies " id="fondo-aviso-cookies"></div>
+
+    <script src="aviso-cookies.js"> </script>
+
+    <!--FIN BANNER BODY-->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">Veterinaria J - Vet</span>
+                    </div>
+                    <p>Cuidamos con pasión y profesionalismo a quienes te brindan amor incondicional. Tu mascota es nuestra prioridad.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51999999999" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="home.html">Inicio</a></li>
+                        <li><a href="vision_mision.html">Nosotros</a></li>
+                        <li><a href="catalogo.html">Galería</a></li>
+                        <li><a href="reserva.html">Reservas</a></li>
+                        <li><a href="registro_1.html">Registro</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul>
+                        <li><a href="#">Consulta General</a></li>
+                        <li><a href="#">Vacunación</a></li>
+                        <li><a href="#">Cirugía</a></li>
+                        <li><a href="#">Peluquería</a></li>
+                        <li><a href="#">Tienda de Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Veterinaria J - Vet. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
